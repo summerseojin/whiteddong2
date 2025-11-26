@@ -1,0 +1,90 @@
+/* 전체 배경: 크림톤 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #fff7f0; /* 부드러운 크림 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* 중앙 박스: 크림 + 하늘색 포인트 */
+.login-box, .content-box {
+  background: #ffffff;
+  padding: 35px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(135, 206, 250, 0.3); /* 하늘색 그림자 */
+  width: 95%;
+  max-width: 380px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 2px solid #cce7ff; /* 하늘색 라인 */
+}
+
+/* 제목 폰트 두껍게 */
+h1, h2 {
+  margin-bottom: 22px;
+  font-weight: 800;
+  color: #4a90e2; /* 하늘색 계열 */
+}
+
+/* 입력창 */
+input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 2px solid #cce7ff; /* 하늘색 테두리 */
+  font-size: 17px;
+  box-sizing: border-box;
+  font-weight: 600;
+  background: #f0fbff; /* 연한 하늘색 배경 */
+  color: #333;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  background: #e0f4ff;
+}
+
+/* 버튼 */
+button, .button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: #4a90e2; /* 하늘색 버튼 */
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+button:hover, .button:hover {
+  background: #357abd;
+}
+
+/* 이미지 */
+img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+}
+
+/* 모바일 대응 */
+@media (max-width: 480px) {
+  .login-box, .content-box {
+    padding: 25px 20px;
+  }
+
+  input, button, .button {
+    font-size: 16px;
+  }
+}

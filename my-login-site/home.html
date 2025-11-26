@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Message</title>
+  <link rel="stylesheet" href="assets/style.css">
+
+  <script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "index.html";
+    }
+  </script>
+
+  <style>
+    /* 타자기 스타일 */
+    #typewriter {
+      font-size: 18px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      border-right: 3px solid #4a90e2;
+      width: fit-content;
+      margin: 0 auto;
+      color: #4a90e2; /* 하늘색 글자 */
+      animation: cursorBlink 0.7s infinite;
+    }
+
+    @keyframes cursorBlink {
+      0%, 50% { border-color: transparent; }
+      51%, 100% { border-color: #4a90e2; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content-box">
+    <h2>로그인 성공 🎉</h2>
+    <div id="typewriter"></div>
+
+    <br><br>
+    <button onclick="logout()" class="button">로그아웃</button>
+  </div>
+
+  <script>
+    const message = 
+"흰뚱뚱이야 안녕!!!\n" +
+"네가 마음에 든다는 비밀번호를 사용해볼 수 있도록 사이트를 만들어봤어 ㅎㅎ\n" +
+"비록 이게 전부이지만 조금이라도 더 행복해하면 좋겠어서 그래\n" +
+"전화하면서 네가 나한테 감동으로서 일으켜 준 것처럼, 나도 뭔가 해보고 싶었어\n" +
+"너랑 앞으로 함께 할 시간이 너무 기대돼\n" +
+"너무너무 사랑해\n" +
+"읽어줘서 고마워 ❤️";
+
+    function typeWriterEffect(text, elementId, speed = 45) {
+      let i = 0;
+      function typing() {
+        if (i < text.length) {
+          document.getElementById(elementId).innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typing, speed);
+        }
+      }
+      typing();
+    }
+
+    typeWriterEffect(message, "typewriter");
+
+    function logout() {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
